@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,7 @@ public class UIManager : MonoBehaviour
     int counter = 0;
     public float score = 0;
     [SerializeField] TMP_Text scoreText;
-
+    [SerializeField] TMP_Text showWord;
 
     
     void Start()
@@ -33,6 +34,27 @@ public class UIManager : MonoBehaviour
         int scoreX = (int)score;
         scoreText.text = "Score: "+scoreX.ToString();
 
+
+        if(spawnManager.current == 1)
+        {
+            showWord.text = "";
+        }
+        else if(spawnManager.current == 2)
+        {
+            showWord.text = "e";
+        }
+        else if(spawnManager.current == 3)
+        {
+            showWord.text = "el";
+        }
+        else if(spawnManager.current == 4)
+        {
+            showWord.text = "l";
+        }
+        else if(spawnManager.current == 5)
+        {
+            showWord.text = "le";
+        }
         
     }
 
