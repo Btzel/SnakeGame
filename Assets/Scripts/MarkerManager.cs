@@ -6,8 +6,8 @@ public class MarkerManager : MonoBehaviour
 {
     Snake snake;
     SpawnManager spawnManager;
-    public bool deadA;
     Animator anim;
+    UIManager UIManager;
     int counter = 0;
     public class Marker
     {
@@ -24,6 +24,7 @@ public class MarkerManager : MonoBehaviour
 
     void Start()
     {
+        UIManager = GameObject.Find("DeadCanvas").GetComponent<UIManager>();
         anim = gameObject.GetComponent<Animator>();
         snake = GameObject.FindWithTag("Snake").GetComponent<Snake>();
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
@@ -42,6 +43,7 @@ public class MarkerManager : MonoBehaviour
     private void Update()
     {
         DeadAnimation();
+        
     }
     public void UpdateMarkerList()
     {
@@ -88,8 +90,11 @@ public class MarkerManager : MonoBehaviour
     public void Destroy()
     {
         Destroy(this.gameObject);
+        UIManager.pane.SetActive(true);
+
     }
 
+    
     
 }
 

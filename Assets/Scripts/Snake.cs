@@ -14,6 +14,8 @@ public class Snake : MonoBehaviour
     [SerializeField] Sprite snakeBodySkin;
     [SerializeField] Sprite snakeHeadSkin;
     public bool dead = false;
+  
+    
 
 
     public float countUp = 0;
@@ -106,5 +108,7 @@ public class Snake : MonoBehaviour
     }
 
     
+
+
 }
 

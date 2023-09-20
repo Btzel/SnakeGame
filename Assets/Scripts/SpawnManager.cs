@@ -11,8 +11,9 @@ public class SpawnManager : MonoBehaviour
     public int wordCounter = 0;
     public int current = 0;
     [SerializeField] float score = 0;
-    float nextScore = 0;
+    public float nextScore = 0;
     UIManager manager;
+    public bool allowed = true;
 
     private void Start()
     {
@@ -20,11 +21,11 @@ public class SpawnManager : MonoBehaviour
     }
     private void Update()
     {
-        if (wordCounter == 0)
+        if (wordCounter == 0 && allowed)
             SpawnWordAtRandomPoint();
     }
 
-    void SpawnWordAtRandomPoint()
+    public void SpawnWordAtRandomPoint()
     {
         
         wordCounter++;
